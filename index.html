@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tools dokseng orang berbasis web">
+    <meta property="og:image" content="https://i.pinimg.com/originals/cb/7f/d1/cb7fd1aaf24a5fa06289691568dd0873.jpg">
+    <title>Dokseng Orang</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script type="text/javascript" src="src/nik-parser.js"></script>
+    <script>
+        function parseNIK() {
+            const nik = document.getElementById('nikInput').value;
+            nikParse(nik, function(result) {
+                const resultText = JSON.stringify(result, null, 2);
+                document.getElementById('result').innerText = resultText;
+            });
+        }
+
+        function copyToClipboard() {
+            const resultText = document.getElementById('result').innerText;
+            navigator.clipboard.writeText(resultText).then(() => {
+                alert("Data copied to clipboard!");
+            }).catch(err => {
+                alert("Failed to copy data: " + err);
+            });
+        }
+    </script>
+</head>
+<body class="bg-gray-900 text-green-500 font-mono flex items-center justify-center min-h-screen">
+
+    <div class="relative bg-gray-800 bg-opacity-50 border border-green-500 shadow-lg shadow-green-500/50 rounded-xl p-8 w-full max-w-3xl backdrop-blur-md">
+        
+        <!-- HEADER (TITLE & CLOSE BUTTON) -->
+        <div class="flex justify-between items-center border-b border-gray-700 pb-4">
+            <div class="flex items-center space-x-2">
+                <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+                <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+            </div>
+            <span class="text-sm text-gray-400">root@adjidev</span>
+        </div>
+
+        <!-- TITLE -->
+        <h1 class="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-500 text-center mt-4">
+            adjidev - Dokseng Orang
+        </h1>
+
+        <!-- INPUT FORM -->
+        <div class="bg-gray-900 bg-opacity-30 border border-gray-700 p-6 rounded-lg mt-6">
+            <label for="nikInput" class="block text-lg font-semibold mb-3">Masukkan NIK:</label>
+            <input type="text" id="nikInput" placeholder="Masukkan NIK" 
+                class="w-full p-3 bg-gray-800 text-green-400 border border-gray-700 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-green-400 transition duration-300"/>
+            
+            <button onclick="parseNIK()" 
+                class="w-full mt-4 py-3 bg-gradient-to-r from-green-500 to-blue-500 text-black font-semibold rounded-md shadow-md hover:shadow-lg hover:from-green-600 hover:to-blue-600 transition-all duration-300">
+                Parse NIK
+            </button>
+        </div>
+
+        <!-- RESULT SECTION -->
+        <div class="bg-gray-900 bg-opacity-30 border border-gray-700 p-6 rounded-lg mt-6">
+            <strong class="text-lg">Hasil Parsing NIK:</strong>
+            <pre id="result" class="bg-gray-800 text-green-400 p-4 mt-4 rounded-md overflow-x-auto min-h-[100px] border border-green-500 shadow-md shadow-green-500/30"></pre>
+            
+            <button onclick="copyToClipboard()" 
+                class="mt-4 w-full py-3 bg-gradient-to-r from-green-500 to-blue-500 text-black font-semibold rounded-md shadow-md hover:shadow-lg hover:from-green-600 hover:to-blue-600 transition-all duration-300">
+                Copy Result
+            </button>
+        </div>
+    </div>
+
+</body>
+</html>
