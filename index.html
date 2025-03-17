@@ -27,44 +27,44 @@
         }
     </script>
 </head>
-<body class="bg-gradient-to-br from-gray-900 to-gray-800 text-white font-mono flex items-center justify-center min-h-screen">
+<body class="bg-gradient-to-br from-black to-gray-900 text-green-400 font-mono flex items-center justify-center min-h-screen">
 
-    <div class="relative bg-gray-800 bg-opacity-60 border border-gray-700 shadow-lg rounded-xl p-8 w-full max-w-3xl backdrop-blur-xl">
+    <div class="relative bg-black bg-opacity-60 border border-green-500 shadow-lg rounded-xl p-8 w-full max-w-3xl backdrop-blur-xl">
 
         <!-- HEADER -->
-        <div class="flex justify-between items-center border-b border-gray-700 pb-4">
+        <div class="flex justify-between items-center border-b border-green-500 pb-4">
             <div class="flex items-center space-x-2">
                 <div class="w-3 h-3 bg-red-500 rounded-full"></div>
                 <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
                 <div class="w-3 h-3 bg-green-500 rounded-full"></div>
             </div>
-            <span class="text-sm text-gray-400">root@LenzzFakeDev</span>
+            <span class="text-sm text-green-400">root@LenzzFakeDev</span>
         </div>
 
         <!-- TITLE -->
-        <h1 class="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500 text-center mt-4">
-            Lenz Suka Taa - Duksing Orang 
+        <h1 class="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-green-600 text-center mt-4">
+            Lenz From TFI - Duksing Orang 
         </h1>
 
         <!-- INPUT FORM -->
-        <div class="bg-gray-900 bg-opacity-40 border border-gray-700 p-6 rounded-lg mt-6 shadow-md">
-            <label for="nikInput" class="block text-lg font-semibold mb-3">Masukkan NIK:</label>
+        <div class="bg-black bg-opacity-40 border border-green-500 p-6 rounded-lg mt-6 shadow-md">
+            <label for="nikInput" class="block text-lg font-semibold mb-3 text-green-400">Masukkan NIK:</label>
             <input type="text" id="nikInput" placeholder="Masukkan NIK" 
-                class="w-full p-3 bg-gray-800 text-white border border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400 transition duration-300"/>
+                class="w-full p-3 bg-black text-green-400 border border-green-500 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-green-400 transition duration-300"/>
             
             <button onclick="parseNIK()" 
-                class="w-full mt-4 py-3 bg-gradient-to-r from-blue-500 to-purple-500 text-white font-semibold rounded-md shadow-md hover:shadow-lg hover:from-blue-600 hover:to-purple-600 transition-all duration-300">
+                class="w-full mt-4 py-3 bg-gradient-to-r from-green-500 to-green-600 text-black font-semibold rounded-md shadow-md hover:shadow-lg hover:from-green-600 hover:to-green-700 transition-all duration-300">
                 Parse NIK
             </button>
         </div>
 
         <!-- RESULT SECTION -->
-        <div class="bg-gray-900 bg-opacity-40 border border-gray-700 p-6 rounded-lg mt-6 shadow-md">
-            <strong class="text-lg">Hasil Parsing NIK:</strong>
-            <pre id="result" class="bg-gray-800 text-white p-4 mt-4 rounded-md overflow-x-auto min-h-[100px] border border-blue-500 shadow-md shadow-blue-500/30"></pre>
+        <div class="bg-black bg-opacity-40 border border-green-500 p-6 rounded-lg mt-6 shadow-md">
+            <strong class="text-lg text-green-400">Hasil Parsing NIK:</strong>
+            <pre id="result" class="bg-black text-green-400 p-4 mt-4 rounded-md overflow-x-auto min-h-[100px] border border-green-500 shadow-md shadow-green-500/30"></pre>
             
             <button onclick="copyToClipboard()" 
-                class="mt-4 w-full py-3 bg-gradient-to-r from-blue-500 to-purple-500 text-white font-semibold rounded-md shadow-md hover:shadow-lg hover:from-blue-600 hover:to-purple-600 transition-all duration-300">
+                class="mt-4 w-full py-3 bg-gradient-to-r from-green-500 to-green-600 text-black font-semibold rounded-md shadow-md hover:shadow-lg hover:from-green-600 hover:to-green-700 transition-all duration-300">
                 Copy Result
             </button>
         </div>
