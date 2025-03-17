@@ -45,15 +45,37 @@
         }
     </script>
     <style>
+        /* Animasi background gradient */
+        body {
+            background: linear-gradient(45deg, #ff3e7f, #5e17eb, #00d4ff, #ffea00);
+            background-size: 300% 300%;
+            animation: moveBackground 10s infinite alternate;
+        }
+
+        @keyframes moveBackground {
+            0% {
+                background-position: 0% 50%;
+            }
+            100% {
+                background-position: 100% 50%;
+            }
+        }
+
+        /* Efek glowing pada box utama */
+        .glow-box {
+            box-shadow: 0 0 20px rgba(255, 62, 127, 0.6), 
+                        0 0 40px rgba(94, 23, 235, 0.6);
+        }
+
         ::selection {
             background: #ff3e7f;
             color: white;
         }
     </style>
 </head>
-<body class="bg-dark text-white font-poppins flex items-center justify-center min-h-screen">
+<body class="text-white font-poppins flex items-center justify-center min-h-screen">
 
-    <div class="relative bg-glass border border-white/20 backdrop-blur-sm shadow-lg rounded-xl p-8 w-full max-w-3xl">
+    <div class="relative bg-glass border border-white/20 backdrop-blur-sm shadow-lg rounded-xl p-8 w-full max-w-3xl glow-box">
         
         <!-- HEADER -->
         <div class="flex justify-between items-center border-b border-white/20 pb-4">
