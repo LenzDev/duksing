@@ -3,12 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Tools dokseng orang by:LenzDev">
+    <meta name="description" content="Tools dokseng orang by: LenzDev">
     <meta property="og:image" content="https://f.top4top.io/p_33512x58s0.jpg">
     <title>Dokseng Orang</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script type="text/javascript" src="src/nik-parser.js"></script>
     <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        poppins: ["Poppins", "sans-serif"],
+                    },
+                    colors: {
+                        primary: "#ff3e7f",
+                        secondary: "#5e17eb",
+                        dark: "#1a1a2e",
+                        glass: "rgba(255, 255, 255, 0.1)"
+                    },
+                    backdropBlur: {
+                        sm: "4px",
+                    }
+                }
+            }
+        };
+
         function parseNIK() {
             const nik = document.getElementById('nikInput').value;
             nikParse(nik, function(result) {
@@ -26,45 +44,51 @@
             });
         }
     </script>
+    <style>
+        ::selection {
+            background: #ff3e7f;
+            color: white;
+        }
+    </style>
 </head>
-<body class="bg-gray-900 text-red-400 font-mono flex items-center justify-center min-h-screen">
+<body class="bg-dark text-white font-poppins flex items-center justify-center min-h-screen">
 
-    <div class="relative bg-gray-800 bg-opacity-50 border border-red-500 shadow-lg shadow-red-500/50 rounded-xl p-8 w-full max-w-3xl backdrop-blur-md">
+    <div class="relative bg-glass border border-white/20 backdrop-blur-sm shadow-lg rounded-xl p-8 w-full max-w-3xl">
         
         <!-- HEADER -->
-        <div class="flex justify-between items-center border-b border-gray-700 pb-4">
+        <div class="flex justify-between items-center border-b border-white/20 pb-4">
             <div class="flex items-center space-x-2">
                 <div class="w-3 h-3 bg-red-500 rounded-full"></div>
                 <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
                 <div class="w-3 h-3 bg-green-500 rounded-full"></div>
             </div>
-            <span class="text-sm text-gray-400">root@LenzzFakeDev</span>
+            <span class="text-sm text-gray-300">root@LenzzFakeDev</span>
         </div>
 
         <!-- TITLE -->
-        <h1 class="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-purple-500 text-center mt-4">
-            Lenz Suka Taa - Duksing Orang 
+        <h1 class="text-3xl font-bold text-center mt-4 bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">
+            Lenz Dev - Dokseng Orang
         </h1>
 
         <!-- INPUT FORM -->
-        <div class="bg-gray-900 bg-opacity-30 border border-gray-700 p-6 rounded-lg mt-6">
+        <div class="bg-white/10 border border-white/20 p-6 rounded-lg mt-6">
             <label for="nikInput" class="block text-lg font-semibold mb-3">Masukkan NIK:</label>
-            <input type="text" id="nikInput" placeholder="Masukkan NIK" 
-                class="w-full p-3 bg-gray-800 text-red-400 border border-gray-700 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-red-400 transition duration-300"/>
+            <input type="text" id="nikInput" placeholder="Masukkan NIK"
+                class="w-full p-3 bg-dark text-white border border-white/20 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary transition duration-300"/>
             
             <button onclick="parseNIK()" 
-                class="w-full mt-4 py-3 bg-gradient-to-r from-red-500 to-purple-500 text-white font-semibold rounded-md shadow-md hover:shadow-lg hover:from-red-600 hover:to-purple-600 transition-all duration-300">
+                class="w-full mt-4 py-3 bg-gradient-to-r from-primary to-secondary text-white font-semibold rounded-md shadow-md hover:shadow-lg hover:from-primary/80 hover:to-secondary/80 transition-all duration-300">
                 Parse NIK
             </button>
         </div>
 
         <!-- RESULT SECTION -->
-        <div class="bg-gray-900 bg-opacity-30 border border-gray-700 p-6 rounded-lg mt-6">
+        <div class="bg-white/10 border border-white/20 p-6 rounded-lg mt-6">
             <strong class="text-lg">Hasil Parsing NIK:</strong>
-            <pre id="result" class="bg-gray-800 text-red-400 p-4 mt-4 rounded-md overflow-x-auto min-h-[100px] border border-red-500 shadow-md shadow-red-500/30"></pre>
+            <pre id="result" class="bg-dark text-white p-4 mt-4 rounded-md overflow-x-auto min-h-[100px] border border-primary shadow-md"></pre>
             
             <button onclick="copyToClipboard()" 
-                class="mt-4 w-full py-3 bg-gradient-to-r from-red-500 to-purple-500 text-white font-semibold rounded-md shadow-md hover:shadow-lg hover:from-red-600 hover:to-purple-600 transition-all duration-300">
+                class="mt-4 w-full py-3 bg-gradient-to-r from-primary to-secondary text-white font-semibold rounded-md shadow-md hover:shadow-lg hover:from-primary/80 hover:to-secondary/80 transition-all duration-300">
                 Copy Result
             </button>
         </div>
