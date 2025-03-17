@@ -5,20 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Tools dokseng orang by: LenzDev">
     <meta property="og:image" content="https://f.top4top.io/p_33512x58s0.jpg">
-    <title>Dokseng Orang</title>
+    <title>Dokseng Orang - Hacker Style</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     fontFamily: {
-                        poppins: ["Poppins", "sans-serif"],
+                        hacker: ["Courier New", "monospace"],
                     },
                     colors: {
-                        primary: "#ff3e7f",
-                        secondary: "#5e17eb",
-                        dark: "#1a1a2e",
-                        glass: "rgba(255, 255, 255, 0.1)"
+                        primary: "#00FF41",  /* Neon Green */
+                        secondary: "#008F11", /* Darker Green */
+                        dark: "#0D1117",  /* Github Dark Theme */
+                        glass: "rgba(0, 0, 0, 0.6)"
                     },
                     backdropBlur: {
                         sm: "4px",
@@ -45,72 +45,83 @@
         }
     </script>
     <style>
-        /* Animasi background gradient */
-        body {
-            background: linear-gradient(45deg, #ff3e7f, #5e17eb, #00d4ff, #ffea00);
-            background-size: 300% 300%;
-            animation: moveBackground 10s infinite alternate;
-        }
-
-        @keyframes moveBackground {
-            0% {
-                background-position: 0% 50%;
-            }
-            100% {
-                background-position: 100% 50%;
-            }
-        }
-
-        /* Efek glowing pada box utama */
-        .glow-box {
-            box-shadow: 0 0 20px rgba(255, 62, 127, 0.6), 
-                        0 0 40px rgba(94, 23, 235, 0.6);
-        }
-
         ::selection {
-            background: #ff3e7f;
-            color: white;
+            background: #00FF41;
+            color: black;
+        }
+
+        /* Background Hacker Style */
+        body {
+            background: url('https://www.pixelstalk.net/wp-content/uploads/images6/Hacker-Wallpaper-Green-Code.jpg') no-repeat center center fixed;
+            background-size: cover;
+            position: relative;
+        }
+
+        /* Overlay Effect */
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(4px);
+            z-index: -1;
+        }
+
+        /* Glitch Effect */
+        .glitch {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #00FF41;
+            text-shadow: 0 0 5px #00FF41, 0 0 10px #00FF41, 0 0 15px #00FF41;
+            animation: glitch 1s infinite;
+        }
+
+        @keyframes glitch {
+            0% { text-shadow: 2px 2px #00FF41, -2px -2px #00FF41; }
+            50% { text-shadow: -2px -2px #00FF41, 2px 2px #00FF41; }
+            100% { text-shadow: 2px 2px #00FF41, -2px -2px #00FF41; }
         }
     </style>
 </head>
-<body class="text-white font-poppins flex items-center justify-center min-h-screen">
+<body class="bg-dark text-primary font-hacker flex items-center justify-center min-h-screen">
 
-    <div class="relative bg-glass border border-white/20 backdrop-blur-sm shadow-lg rounded-xl p-8 w-full max-w-3xl glow-box">
+    <div class="relative bg-glass border border-green-500 backdrop-blur-sm shadow-lg rounded-xl p-8 w-full max-w-3xl">
         
         <!-- HEADER -->
-        <div class="flex justify-between items-center border-b border-white/20 pb-4">
+        <div class="flex justify-between items-center border-b border-green-500 pb-4">
             <div class="flex items-center space-x-2">
                 <div class="w-3 h-3 bg-red-500 rounded-full"></div>
                 <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
                 <div class="w-3 h-3 bg-green-500 rounded-full"></div>
             </div>
-            <span class="text-sm text-gray-300">root@LenzzFakeDev</span>
+            <span class="text-sm text-green-400">root@LenzzFakeDev</span>
         </div>
 
         <!-- TITLE -->
-        <h1 class="text-3xl font-bold text-center mt-4 bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">
-            Lenz Dev - Dokseng Orang
-        </h1>
+        <h1 class="glitch text-center mt-4">Lenz Dev - Dokseng Orang</h1>
 
         <!-- INPUT FORM -->
-        <div class="bg-white/10 border border-white/20 p-6 rounded-lg mt-6">
-            <label for="nikInput" class="block text-lg font-semibold mb-3">Masukkan NIK:</label>
+        <div class="bg-black/30 border border-green-500 p-6 rounded-lg mt-6">
+            <label for="nikInput" class="block text-lg font-semibold mb-3 text-green-300">Masukkan NIK:</label>
             <input type="text" id="nikInput" placeholder="Masukkan NIK"
-                class="w-full p-3 bg-dark text-white border border-white/20 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary transition duration-300"/>
+                class="w-full p-3 bg-dark text-green-400 border border-green-500 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary transition duration-300"/>
             
             <button onclick="parseNIK()" 
-                class="w-full mt-4 py-3 bg-gradient-to-r from-primary to-secondary text-white font-semibold rounded-md shadow-md hover:shadow-lg hover:from-primary/80 hover:to-secondary/80 transition-all duration-300">
+                class="w-full mt-4 py-3 bg-green-500 text-black font-semibold rounded-md shadow-md hover:bg-green-400 transition-all duration-300">
                 Parse NIK
             </button>
         </div>
 
         <!-- RESULT SECTION -->
-        <div class="bg-white/10 border border-white/20 p-6 rounded-lg mt-6">
-            <strong class="text-lg">Hasil Parsing NIK:</strong>
-            <pre id="result" class="bg-dark text-white p-4 mt-4 rounded-md overflow-x-auto min-h-[100px] border border-primary shadow-md"></pre>
+        <div class="bg-black/30 border border-green-500 p-6 rounded-lg mt-6">
+            <strong class="text-lg text-green-300">Hasil Parsing NIK:</strong>
+            <pre id="result" class="bg-dark text-green-400 p-4 mt-4 rounded-md overflow-x-auto min-h-[100px] border border-primary shadow-md"></pre>
             
             <button onclick="copyToClipboard()" 
-                class="mt-4 w-full py-3 bg-gradient-to-r from-primary to-secondary text-white font-semibold rounded-md shadow-md hover:shadow-lg hover:from-primary/80 hover:to-secondary/80 transition-all duration-300">
+                class="mt-4 w-full py-3 bg-green-500 text-black font-semibold rounded-md shadow-md hover:bg-green-400 transition-all duration-300">
                 Copy Result
             </button>
         </div>
