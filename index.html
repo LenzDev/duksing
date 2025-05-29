@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <meta name="description" content="LenzMods気術界(力開者)">
+  <meta name="description" content="Tools dokseng orang by: LenzDev">
   <meta property="og:image" content="https://f.top4top.io/p_33512x58s0.jpg">
-  <title>LenzModsMods気力愛(界名開)</title>
+  <title>Dokseng Orang</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="src/nik-parser.js"></script>
 </head>
@@ -17,44 +17,43 @@
         <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
         <div class="w-3 h-3 bg-green-500 rounded-full"></div>
       </div>
-      <span class="text-sm text-green-400">root@LenzMods気端</span>
+      <span class="text-sm text-green-400">root@LenzHumman</span>
     </div>
 
     <h1 id="obfTitle" class="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-green-600 text-center mt-4"></h1>
 
     <div class="bg-black bg-opacity-40 border border-green-500 p-6 rounded-lg mt-6 shadow-md">
-      <label for="nikInput" class="block text-lg font-semibold mb-3 text-green-400">LenzModsMods気指令入力:</label>
-      <input type="text" id="nikInput" placeholder="LenzModsMods気入力数" class="w-full p-3 bg-black text-green-400 border border-green-500 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-green-400 transition duration-300"/>
+      <label for="nikInput" class="block text-lg font-semibold mb-3 text-green-400">Masukkan NIK:</label>
+      <input type="text" id="nikInput" placeholder="Masukkan NIK" class="w-full p-3 bg-black text-green-400 border border-green-500 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-green-400 transition duration-300"/>
       <button id="btnParse" class="w-full mt-4 py-3 bg-gradient-to-r from-green-500 to-green-600 text-black font-semibold rounded-md shadow-md hover:shadow-lg hover:from-green-600 hover:to-green-700 transition-all duration-300">
-        [解析]
+        [PARSE]
       </button>
     </div>
 
     <div class="bg-black bg-opacity-40 border border-green-500 p-6 rounded-lg mt-6 shadow-md">
-      <strong class="text-lg text-green-400">LenzModsMods気結果:</strong>
+      <strong class="text-lg text-green-400">Hasil Parsing NIK:</strong>
       <pre id="result" class="bg-black text-green-400 p-4 mt-4 rounded-md overflow-x-auto min-h-[100px] border border-green-500 shadow-md shadow-green-500/30"></pre>
       <button id="btnCopy" class="mt-4 w-full py-3 bg-gradient-to-r from-green-500 to-green-600 text-black font-semibold rounded-md shadow-md hover:shadow-lg hover:from-green-600 hover:to-green-700 transition-all duration-300">
-        [コピー]
+        [COPY]
       </button>
     </div>
   </div>
 
   <script>
     (function(){
-      const 気界力=["界題","LenzModsMods気開示(正体)","LenzMods気方","気得","気文","btn解析","気入力","気結果","btnコピー","気書","気警","気捕","LenzModsMods気失敗: "];
+      const _0x5a23=["\x6F\x62\x66\x54\x69\x74\x6C\x65","\x4C\x65\x6E\x7A\x20\x58\x68\x69\x72\x6F\x20\x2D\x20\x54\x6F\x6C\x73\x20\x44\x6F\x78\x69\x6E\x67\x20\x4E\x69\x6B\x20\x50\x61\x72\x73\x65\x72","\x61\x74\x6F\x62","\x67\x65\x74\x45\x6C\x65\x6D\x65\x6E\x74\x42\x79\x49\x64","\x69\x6E\x6E\x65\x72\x54\x65\x78\x74","\x62\x74\x6E\x50\x61\x72\x73\x65","\x6E\x69\x6B\x49\x6E\x70\x75\x74","\x72\x65\x73\x75\x6C\x74","\x62\x74\x6E\x43\x6F\x70\x79","\x77\x72\x69\x74\x65\x54\x65\x78\x74","\x61\x6C\x65\x72\x74","\x63\x61\x74\x63\x68","\x46\x61\x69\x6C\x65\x64\x20\x74\x6F\x20\x63\x6F\x70\x79\x20\x64\x61\x74\x61\x3A\x20"];
+      document[_0x5a23[3]](_0x5a23[0])[_0x5a23[4]]=atob(_0x5a23[1]);
 
-      document[気界力[3]](気界力[0])[気界力[4]] = atob(気界力[1]);
-
-      document[気界力[3]](気界力[5]).onclick = function(){
-        const 気数 = document[気界力[3]](気界力[6]).value;
-        nikParse(気数, function(結果){
-          document[気界力[3]](気界力[7])[気界力[4]] = JSON.stringify(結果, null, 2);
+      document[_0x5a23[3]](_0x5a23[5]).onclick=function(){
+        const nik=document[_0x5a23[3]](_0x5a23[6]).value;
+        nikParse(nik,function(result){
+          document[_0x5a23[3]](_0x5a23[7])[_0x5a23[4]]=JSON.stringify(result,null,2);
         });
       };
 
-      document[気界力[3]](気界力[8]).onclick = function(){
-        const 出 = document[気界力[3]](気界力[7])[気界力[4]];
-        navigator.clipboard[気界力[9]](出).then(()=>{ alert("LenzModsMods気複写!") })[気界力[11]](e => alert(気界力[12] + e));
+      document[_0x5a23[3]](_0x5a23[8]).onclick=function(){
+        const r=document[_0x5a23[3]](_0x5a23[7])[_0x5a23[4]];
+        navigator.clipboard[_0x5a23[9]](r).then(()=>{alert("Data copied to clipboard!")})[_0x5a23[11]](e=>alert(_0x5a23[12]+e));
       };
     })();
   </script>
