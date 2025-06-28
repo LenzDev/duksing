@@ -1,53 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Tools dokseng orang by: LenzDev" />
-  <meta property="og:image" content="https://f.top4top.io/p_33512x58s0.jpg" />
-  <title>Dokseng Orang</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script type="text/javascript" src="src/nik-parser.js"></script>
-  <script>
-    (function(){
-      var _0x3f2d=["\x76\x61\x6C\x75\x65","\x67\x65\x74\x45\x6C\x65\x6D\x65\x6E\x74\x42\x79\x49\x64","\x6E\x69\x6B\x49\x6E\x70\x75\x74","\x70\x61\x72\x73\x65\x4E\x49\x4B","\x6A\x73\x6F\x6E\x53\x74\x72\x69\x6E\x67\x69\x66\x79","\x72\x65\x73\x75\x6C\x74","\x69\x6E\x6E\x65\x72\x54\x65\x78\x74","\x77\x72\x69\x74\x65\x54\x65\x78\x74","\x63\x6F\x70\x79\x54\x6F\x43\x6C\x69\x70\x62\x6F\x61\x72\x64","\x63\x6C\x69\x70\x62\x6F\x61\x72\x64","\x74\x68\x65\x6E","\x61\x6C\x65\x72\x74","\x63\x61\x74\x63\x68","\x66\x61\x69\x6C\x65\x64\x20\x74\x6F\x20\x63\x6F\x70\x79\x20\x64\x61\x74\x61\x3A\x20"];
-      function _parse(){
-        const _0xb5e3x1=document[_0x3f2d[1]](_0x3f2d[2])[_0x3f2d[0]];
-        nikParse(_0xb5e3x1,function(_0xb5e3x2){
-          const _0xb5e3x3=JSON[_0x3f2d[4]](_0xb5e3x2,null,2);
-          document[_0x3f2d[1]](_0x3f2d[5])[_0x3f2d[6]]=_0xb5e3x3;
-        });
-      }
-      function _copy(){
-        const _0xb5e3x4=document[_0x3f2d[1]](_0x3f2d[5])[_0x3f2d[6]];
-        navigator[_0x3f2d[9]][_0x3f2d[7]](_0xb5e3x4)[_0x3f2d[10]](()=>{window[_0x3f2d[11]]("Data copied to clipboard!")})[_0x3f2d[12]]((_0xb5e3x5)=>{window[_0x3f2d[11]](_0x3f2d[13]+_0xb5e3x5)});
-      }
-      window.parseNIK=_parse;
-      window.copyToClipboard=_copy;
-    })();
-  </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tools dokseng orang by: LenzDev">
+    <meta property="og:image" content="https://f.top4top.io/p_33512x58s0.jpg">
+    <title>Dokseng Orang</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script type="text/javascript" src="src/nik-parser.js"></script>
+    <script>
+        function parseNIK() {
+            const nik = document.getElementById('nikInput').value;
+            nikParse(nik, function(result) {
+                const resultText = JSON.stringify(result, null, 2);
+                document.getElementById('result').innerText = resultText;
+            });
+        }
+
+        function copyToClipboard() {
+            const resultText = document.getElementById('result').innerText;
+            navigator.clipboard.writeText(resultText).then(() => {
+                alert("Data copied to clipboard!");
+            }).catch(err => {
+                alert("Failed to copy data: " + err);
+            });
+        }
+    </script>
 </head>
 <body class="bg-gradient-to-br from-black to-gray-900 text-green-400 font-mono flex items-center justify-center min-h-screen">
-  <div class="relative bg-black bg-opacity-60 border border-green-500 shadow-lg rounded-xl p-8 w-full max-w-3xl backdrop-blur-xl">
-    <div class="flex justify-between items-center border-b border-green-500 pb-4">
-      <div class="flex items-center space-x-2">
-        <div class="w-3 h-3 bg-red-500 rounded-full"></div>
-        <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
-        <div class="w-3 h-3 bg-green-500 rounded-full"></div>
-      </div>
-      <span class="text-sm text-green-400">root@LenzHumman</span>
+
+    <div class="relative bg-black bg-opacity-60 border border-green-500 shadow-lg rounded-xl p-8 w-full max-w-3xl backdrop-blur-xl">
+
+        <!-- HEADER -->
+        <div class="flex justify-between items-center border-b border-green-500 pb-4">
+            <div class="flex items-center space-x-2">
+                <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+                <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+            </div>
+            <span class="text-sm text-green-400">root@LenzzFakeDev</span>
+        </div>
+
+        <!-- TITLE -->
+        <h1 class="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-green-600 text-center mt-4">
+            Lenz From TFI - Duksing Orang 
+        </h1>
+
+        <!-- INPUT FORM -->
+        <div class="bg-black bg-opacity-40 border border-green-500 p-6 rounded-lg mt-6 shadow-md">
+            <label for="nikInput" class="block text-lg font-semibold mb-3 text-green-400">Masukkan NIK:</label>
+            <input type="text" id="nikInput" placeholder="Masukkan NIK" 
+                class="w-full p-3 bg-black text-green-400 border border-green-500 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-green-400 transition duration-300"/>
+            
+            <button onclick="parseNIK()" 
+                class="w-full mt-4 py-3 bg-gradient-to-r from-green-500 to-green-600 text-black font-semibold rounded-md shadow-md hover:shadow-lg hover:from-green-600 hover:to-green-700 transition-all duration-300">
+                Parse NIK
+            </button>
+        </div>
+
+        <!-- RESULT SECTION -->
+        <div class="bg-black bg-opacity-40 border border-green-500 p-6 rounded-lg mt-6 shadow-md">
+            <strong class="text-lg text-green-400">Hasil Parsing NIK:</strong>
+            <pre id="result" class="bg-black text-green-400 p-4 mt-4 rounded-md overflow-x-auto min-h-[100px] border border-green-500 shadow-md shadow-green-500/30"></pre>
+            
+            <button onclick="copyToClipboard()" 
+                class="mt-4 w-full py-3 bg-gradient-to-r from-green-500 to-green-600 text-black font-semibold rounded-md shadow-md hover:shadow-lg hover:from-green-600 hover:to-green-700 transition-all duration-300">
+                Copy Result
+            </button>
+        </div>
     </div>
-    <h1 class="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-green-600 text-center mt-4">Lenz Xhiro - Tols Doxing Nik Parser</h1>
-    <div class="bg-black bg-opacity-40 border border-green-500 p-6 rounded-lg mt-6 shadow-md">
-      <label for="nikInput" class="block text-lg font-semibold mb-3 text-green-400">Masukkan NIK:</label>
-      <input type="text" id="nikInput" placeholder="Masukkan NIK" class="w-full p-3 bg-black text-green-400 border border-green-500 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-green-400 transition duration-300" />
-      <button onclick="parseNIK()" class="w-full mt-4 py-3 bg-gradient-to-r from-green-500 to-green-600 text-black font-semibold rounded-md shadow-md hover:shadow-lg hover:from-green-600 hover:to-green-700 transition-all duration-300">Parse NIK</button>
-    </div>
-    <div class="bg-black bg-opacity-40 border border-green-500 p-6 rounded-lg mt-6 shadow-md">
-      <strong class="text-lg text-green-400">Hasil Parsing NIK:</strong>
-      <pre id="result" class="bg-black text-green-400 p-4 mt-4 rounded-md overflow-x-auto min-h-[100px] border border-green-500 shadow-md shadow-green-500/30"></pre>
-      <button onclick="copyToClipboard()" class="mt-4 w-full py-3 bg-gradient-to-r from-green-500 to-green-600 text-black font-semibold rounded-md shadow-md hover:shadow-lg hover:from-green-600 hover:to-green-700 transition-all duration-300">Copy Result</button>
-    </div>
-  </div>
+
 </body>
 </html>
